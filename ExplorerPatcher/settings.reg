@@ -248,7 +248,7 @@
 
 ;T 开始菜单
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;z 2 开始按钮样式
+;z 2 开始菜单样式
 ;x 0 Windows 11（默认）
 ;x 1 Windows 10
 "Start_ShowClassicMode"=dword:00000000
@@ -285,7 +285,7 @@
 ;x 99999 无限制
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;a 当使用多个显示器时，按下键盘上的“开始”键
+;a 当使用多个显示器时，按下键盘上的“开始”键，
 ;c 10 开始菜单出现的显示器位置
 ;x 1 主显示器（默认）
 ;x 0 光标所在的显示器
