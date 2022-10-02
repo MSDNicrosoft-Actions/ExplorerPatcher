@@ -134,7 +134,7 @@
 "SkinIcons"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;a 当右键单击网络图标时，选择“打开‘网络和 Internet’设置”
-;c 3 应打开
+;c 3 应打开：
 ;x 0 “设置”中的“网络和 Internet”部分（默认）
 ;x 1 “控制面板”中的“网络和共享中心”
 ;x 2 “控制面板”中的“更改适配器设置”
@@ -256,7 +256,7 @@
 ;ms-settings:personalization-start
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 2 位置
-;x 0 在屏幕边缘
+;x 0 屏幕边缘
 ;x 1 居中（默认）
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
@@ -757,14 +757,14 @@
 ;e 此项目旨在加强 Windows 上的工作环境。
 ;e  由 Valentin-Gabriel Radu 自豪地设计。
 ;t 运行在 Windows 11 上，OS 内部版本 %OSVERSIONSTRING%
-;y 在 GitHub 上浏览此项目（https://github.com/valinet） 🡕
+;y 在 GitHub 上浏览此项目（https://github.com/valinet）🡕
 ;https://github.com/valinet
 ;q
 ;y 访问官方网站（https://www.valinet.ro）🡕
 ;https://www.valinet.ro
-;y 作者 E-mail（valentingabrielradu@gmail.com） 🡕
+;y 作者 E-mail（valentingabrielradu@gmail.com）🡕
 ;mailto:valentingabrielradu@gmail.com
-;y 捐赠（通过 PayPal） 🡕
+;y 捐赠（通过 PayPal）🡕
 ;https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR
 ;y 常见问题 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
