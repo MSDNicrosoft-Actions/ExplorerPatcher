@@ -133,9 +133,9 @@
 ;b 将 Windows 11 样式应用于系统托盘图标 *
 "SkinIcons"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;a 当右键单击网络图标时，
-;c 3 选择“打开‘网络和 Internet’设置”，应打开：
-;x 0 “设置”应用中的“网络和 Internet”部分（默认）
+;a 当右键单击网络图标时，选择“打开‘网络和 Internet’设置”
+;c 3 应打开
+;x 0 “设置”中的“网络和 Internet”部分（默认）
 ;x 1 “控制面板”中的“网络和共享中心”
 ;x 2 “控制面板”中的“更改适配器设置”
 "ReplaceNetwork"=dword:00000000
@@ -217,7 +217,7 @@
 ;i 在显示 Windows 10 上下文菜单时使用沉浸式菜单 **
 "DisableImmersiveContextMenu"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
-;d 禁用导航栏 **
+;d 禁用地址栏 **
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 禁用新版搜索栏
@@ -780,7 +780,7 @@
 
 
 ;f
-;u 重庆资源管理器 (*)
+;u 重启资源管理器 (*)
 ;restart
 ;;u 恢复默认设置
 ;;reset
