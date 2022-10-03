@@ -755,7 +755,7 @@
 ;t 翻译（简体中文）：MSDNicrosoft
 ;e 
 ;e 此项目旨在加强 Windows 上的工作环境。
-;e  由 Valentin-Gabriel Radu 自豪地设计。
+;e 由 Valentin-Gabriel Radu 自豪地设计。
 ;t 运行在 Windows 11 上，OS 内部版本 %OSVERSIONSTRING%
 ;y 在 GitHub 上浏览此项目（https://github.com/valinet）🡕
 ;https://github.com/valinet
