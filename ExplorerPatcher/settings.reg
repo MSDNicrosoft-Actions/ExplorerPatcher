@@ -464,6 +464,11 @@
 ;x 400 400
 ;x 500 500
 "ShowDelay"=dword:00000064
+;c 3 Use the scroll wheel to change selection
+;x 0 Never (default)
+;x 1 When cursor is over the switcher
+;x 2 Always
+"ScrollWheelBehavior"=dword:00000000
 ;q
 ;y 了解更多关于“简易窗口切换器” 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
