@@ -370,10 +370,10 @@
 ;x 400 400
 ;x 500 500
 "ShowDelay"=dword:00000064
-;c 3 Use the scroll wheel to change selection
-;x 0 Never (default)
-;x 1 When cursor is over the switcher
-;x 2 Always
+;c 3 使用鼠标滚轮更改选择
+;x 0 从不（默认）
+;x 1 当鼠标光标位于切换器上时
+;x 2 始终
 "ScrollWheelBehavior"=dword:00000000
 ;q
 ;y 了解更多关于“简易窗口切换器” 🡕
