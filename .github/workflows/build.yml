@@ -50,7 +50,7 @@ jobs:
       if: github.event.inputs.ref == ''
       with:
         submodules: recursive
-    
+
     - name: Checkout specific build and submodules
       uses: actions/checkout@v2
       if: github.event.inputs.ref != ''
@@ -60,14 +60,14 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-      
+
     - name: Declare some variables
       id: vars
       shell: bash
       run: |
         echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      
+
     - name: Enable SimpleWindowSwitcher support for newer Windows SDKs
       shell: cmd
       run: |
@@ -78,14 +78,14 @@ jobs:
         C:\msys64\usr\bin\patch.exe -N SimpleWindowSwitcher/sws_def.h 972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
         C:\msys64\usr\bin\unix2dos.exe SimpleWindowSwitcher/sws_def.h
         exit /b 0
-        
+
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
-      
+
     - name: Restore NuGet packages
       run: |
         nuget restore ExplorerPatcher.sln
-      
+
     - name: Build funchook
       shell: powershell
       run: |
@@ -95,7 +95,7 @@ jobs:
         cmake -G "Visual Studio 17 2022" -A x64 ..
         (gc .\funchook-static.vcxproj) -replace '<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>', '<RuntimeLibrary>MultiThreaded</RuntimeLibrary>' | Out-File .\funchook-static.vcxproj
         cmake --build . --config Release
-        
+
     - name: Build EP IA-32
       if: github.event.inputs.config == ''
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -120,13 +120,19 @@ jobs:
       run: |
         mkdir build
         cp -r ${{ github.event.inputs.build_dir }}/Release build/Release
-    
+
     - name: Generate dxgi.dll
       shell: bash
       working-directory: build/Release
       run: |
         if [[ -f "ExplorerPatcher.amd64.dll" ]]; then cp ExplorerPatcher.amd64.dll dxgi.dll; fi
-        
+
+    - name: Remove unnecessary files
+      shell: cmd
+      working-directory: build/Release
+      run: |
+        del *.pdb *.lib *.exp
+
     - name: Patch setup
       shell: cmd
       working-directory: build/Release
@@ -148,7 +154,7 @@ jobs:
       run: |
         echo "::set-output name=data::$(./ep_generate_release_name.exe)"
       id: release_name
-      
+
     - name: Generate release notes
       shell: bash
       working-directory: build/Release
@@ -160,7 +166,7 @@ jobs:
         MY_STRING="${MY_STRING//$'\r'/'%0D'}"
         echo "::set-output name=data::$MY_STRING"
       id: release_description
-      
+
     - name: Create/update release (valinet)
       uses: actions/create-release@v1
       if: github.repository_owner == 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
@@ -184,7 +190,7 @@ jobs:
         asset_content_type: application/x-msdownload
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
-        
+
     - name: Create/update release (forks)
       uses: actions/create-release@v1
       if: github.repository_owner != 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
