@@ -328,6 +328,8 @@
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
 ;u 从资源管理器将磁贴固定到 Windows 10 开始菜单上
 ;pin_tiles
+;y IMPORTANT, MUST READ: Notice regarding this feature (online)
+;https://github.com/valinet/ExplorerPatcher/discussions/1679
 ;g StartMenu_Windows10
 
 
@@ -342,13 +344,13 @@
 "AltTabSettings"=dword:00000000
 ;s WindowSwitcher_SWS IsSWSEnabled
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b 切换时包括桌面选项
+;b 将桌面显示为交互列表中的最后一个窗口
 "IncludeWallpaper"=dword:00000001
 ;b 始终在主显示器上显示
 "PrimaryOnly"=dword:00000000
-;b 仅显示当前显示器的窗口
+;b 仅在光标所在的显示器显示窗口
 "PerMonitor"=dword:00000000
-;b 只显示最近的窗口（每个应用程序切换器）
+;b 对同一应用的窗口分组
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000

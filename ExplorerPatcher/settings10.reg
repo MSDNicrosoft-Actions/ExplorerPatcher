@@ -255,13 +255,13 @@
 "AltTabSettings"=dword:00000000
 ;t 以下选项只适用于简单窗口切换器：
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b 切换时包括桌面选项
+;b 将桌面显示为交互列表中的最后一个窗口
 "IncludeWallpaper"=dword:00000001
 ;b 始终在主显示器上显示
 "PrimaryOnly"=dword:00000000
-;b 仅显示当前显示器的窗口
+;b 仅在光标所在的显示器显示窗口
 "PerMonitor"=dword:00000000
-;b 只显示最近的窗口（每个应用程序切换器）
+;b 对同一应用的窗口分组
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
