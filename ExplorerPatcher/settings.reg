@@ -730,7 +730,7 @@
 ;b 不改变任务栏的上下文菜单（例如：不显示“属性”项目）
 "NoPropertiesInContextMenu"=dword:00000000
 ;b 启用调试符号下载 *
-"EnableSymbolDownload"=dword:00000000
+"EnableSymbolDownload"=dword:00000001
 ;s Advanced_Windows10 IsOldTaskbar
 ;b 固定的项目作为快速启动（不将固定的项目与活动的应用程序分组）*
 "PinnedItemsActAsQuickLaunch"=dword:00000000
